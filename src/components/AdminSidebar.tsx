@@ -1,21 +1,32 @@
 import { Link, useLocation } from "react-router-dom";   
 import type { Location } from "react-router-dom";
+import { FaChartPie, FaChartBar, FaChartLine, FaStopwatch, FaTicketAlt} from "react-icons/fa";
+import { RiCopperCoinFill } from "react-icons/ri";
+
 import {
   MdDashboardCustomize,
   MdInventory,
   MdPeople,
   MdReceipt,
 } from "react-icons/md";
-import type { IconType } from "react-icons/lib";
+import type { IconType } from "react-icons/lib"; 
 
 const AdminSidebar = () => {
   const location = useLocation();
 
   return (
     <aside>
-      <h2>Admin</h2>
+      <h2>Logo</h2>
+      <Dashboard location={location}/>
+      <Charts location={location}/>
+      <AppsComp location={location}/>
+    </aside>
+  );
+};
 
-      <div>
+
+let Dashboard = ({location}:{location:Location}) => {
+    return <div>
         <h3>Dashboard</h3>
         <ul>
 
@@ -26,9 +37,36 @@ const AdminSidebar = () => {
            
         </ul>
       </div>
-    </aside>
-  );
-};
+    
+}
+
+let Charts = ({location}:{location:Location}) => {
+    return <div>
+        <h3>Charts</h3>
+        <ul>
+            <Li url="/admin/charts/pie" text="Pie" location ={location} Icon={FaChartPie}/>
+            <Li url="/admin/charts/bar" text="Bar" location ={location} Icon={FaChartBar}/>
+            <Li url="/admin/charts/line" text="Line" location ={location} Icon={FaChartLine}/>
+        </ul>
+      </div>
+}
+let AppsComp = ({location}:{location:Location}) => {
+    return <div>
+        <h3>Apps</h3>
+        <ul>
+            <Li url="/admin/apps/stopwatch" text="Stopwatch" location ={location} Icon={FaStopwatch}/>
+            <Li url="/admin/apps/coupen" text="Coupen" location ={location} Icon={FaTicketAlt }/>
+            <Li url="/admin/apps/toss" text="Toss" location ={location} Icon={RiCopperCoinFill }/>
+        </ul>
+      </div>
+}
+
+
+
+
+
+
+
 
 interface LiProps {
     url:string;
