@@ -1,0 +1,81 @@
+@import "_mixin";
+
+:root {
+  --sans: sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 16px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color: var(--text);
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.red {
+  color: red;
+}
+
+.purple {
+  color: #03528d;
+}
+
+.gold {
+  color: #f1c40f;
+}
+
+li {
+  list-style: none;
+}
+
+.adminContainer {
+  @include grid(1fr 4fr, 2rem);
+  height: 100vh;
+  background-color: rgb(236, 234, 234);
+  > aside {
+    background: #f8f9fa;
+    padding: 1rem;
+    width: 100%;
+    z-index: 10;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      display: none;
+      width: 0.5rem;
+
+    }
+    > div {
+      margin: 32px 14px;
+      > h3 {
+        @include heading(14px, 500);
+          margin-bottom: 1rem;
+          opacity: .8;
+          margin: 12px 0;
+
+        }
+        >ul{
+          @include flex(column, unset, unset, 0.5rem);
+          >li{
+            padding: .3rem 1rem; 
+            border-radius: 10px;
+            a{
+                color: rgba(0,0,0,.8);
+                @include flex(row, unset, unset, .5rem);
+            }
+          }
+        }
+    }
+  }
+}
