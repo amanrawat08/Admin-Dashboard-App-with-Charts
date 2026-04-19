@@ -1,5 +1,5 @@
-@import "_mixin";
-
+@use "_mixin";
+@use "_dashboard";
 :root {
   --sans: sans-serif;
   --heading: system-ui, "Segoe UI", Roboto, sans-serif;
@@ -42,7 +42,7 @@ li {
 }
 
 .adminContainer {
-  @include grid(1fr 4fr, 2rem);
+  @include mixin.grid(1fr 4fr, 2rem);
   height: 100vh;
   background-color: rgb(236, 234, 234);
   > aside {
@@ -59,20 +59,20 @@ li {
     > div {
       margin: 32px 14px;
       > h3 {
-        @include heading(14px, 500);
+        @include mixin.heading(14px, 500);
           margin-bottom: 1rem;
           opacity: .8;
           margin: 12px 0;
 
         }
         >ul{
-          @include flex(column, unset, unset, 0.5rem);
+          @include mixin.flex(column, unset, unset, 0.5rem);
           >li{
             padding: .3rem 1rem; 
             border-radius: 10px;
             a{
                 color: rgba(0,0,0,.8);
-                @include flex(row, unset, unset, .5rem);
+                @include mixin.flex(row, unset, unset, .5rem);
             }
           }
         }
