@@ -1,0 +1,32 @@
+{
+  "categories": [
+    {
+      "value": 40,
+      "heading": "Laptop"
+    },
+    {
+      "value": 30,
+      "heading": "Mobile"
+    },
+    {
+      "value": 25,
+      "heading": "Tablet"
+    },
+    {
+      "value": 20,
+      "heading": "Headphones"
+    },
+    {
+      "value": 35,
+      "heading": "Smartwatch"
+    },
+    {
+      "value": 15,
+      "heading": "Camera"
+    },
+    {
+      "value": 28,
+      "heading": "Accessories"
+    }
+  ]
+}

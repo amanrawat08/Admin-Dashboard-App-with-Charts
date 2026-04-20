@@ -24,7 +24,7 @@
 
     >.widgetcontainer{
          @include mixin.flex(row, space-between, stretch, 1rem); 
-        padding: 1rem;
+        padding: 1rem 0rem;
         flex-wrap: wrap;
         >.widget{
             background: #fff;
@@ -46,22 +46,102 @@
                 }
                 h3{
                     font-size: 24px;
-                    font-weight: 500;
+                    font-weight: 700;
+                    margin: 10px 0px;
                 }
             }
             >.widget-circle{
                 position: relative;
                 flex:null;
-                @include mixin.square(40px);
+                @include mixin.square(48px);
                 border-radius: 50%;
-                background-color: rgba(178, 13, 13);
+                background-color: rgb(227, 227, 227);
                 @include mixin.flex(row, center, center, unset);
+                z-index: 3;
+                &::before{
+                    content: "";
+                    position: absolute;
+                    @include mixin.square(40px);
+                    border-radius: 50%;
+                    background-color: rgb(255, 255, 255);
+                    z-index: 2;
+                }
                 span{
                     font-size: 12px;
                     color: #fff;
+                    position: relative;
+                    z-index: 10;
+                    font-weight: 900; 
                     font-weight: 500;
                 }
             }
         }
+    }
+
+    >.graph-container{
+        @include mixin.flex(row, unset, unset, 2rem);
+        padding: 0rem 2rem 2rem 0;
+        >div{
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        .revenue-chart{
+            width: 100%; 
+            
+            padding: 1rem 3rem;
+
+
+
+           
+
+            > h2{
+                @include mixin.heading;
+                text-align: center;
+                margin: 1rem 0 2rem .25rem;
+            }
+        }
+
+        .dashboard-categoies{
+            width: 100%;
+            max-width: 17rem;
+            @include mixin.flex(column, center, unset, 1rem); 
+            padding: 1rem 3rem;
+
+            >h2{
+                @include mixin.heading;
+                text-align: center;
+                margin: 1rem 0 2rem .25rem; 
+            }
+            >div{ 
+                padding-left: .2rem;
+            }
+        }
+
+        .categories-item{
+            width: 100%;
+            @include mixin.flex(row, space-between, center, .2rem);
+            padding: .4rem;
+            >h5{
+                letter-spacing: 1px;
+                font-weight: 300;
+            }
+            >div{
+                margin-left: auto;
+                width: 6rem;
+                background: rgb(237, 237, 237);
+                height: .25rem;
+                flex: none;
+                >div{
+                    height: 100%;
+                    border-radius: 20px;
+                }
+            }
+            >span{
+                font-size: 14px;
+                font-weight: 700;
+            }
+        }
+
     }
 }

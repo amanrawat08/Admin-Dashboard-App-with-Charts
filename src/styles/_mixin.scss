@@ -1,4 +1,4 @@
-@mixin heading($size: 3px, $weight: 400, $case: uppercase) {
+@mixin heading($size: 23px, $weight: 400, $case: uppercase) {
   font-size: $size;
   font-weight: $weight;
   text-transform: $case;
