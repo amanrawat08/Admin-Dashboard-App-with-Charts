@@ -3,6 +3,8 @@ import { FaSearch, FaBell } from "react-icons/fa";
 import user from "../assets/user.png";
 import { HiTrendingUp, HiTrendingDown } from "react-icons/hi";
 import data from "../assets/data.json"
+import BarChart from "../components/Charts";
+import {BiMaleFemale} from "react-icons/bi"
 const Dashboard = () => {
   return (
     <div className="adminContainer">
@@ -51,6 +53,10 @@ const Dashboard = () => {
         <section className="graph-container">
           <div className="revenue-chart">
             <h2>Revenue and Transactions</h2>
+            {/**Graphs */}
+            <BarChart data_1={[100,230,120,23,4]} data_2={[80,91,2,34,129]} title_1="Marks" title_2="Anything"
+              bg_color_1="lightgreen" bg_color_2="lightblue" 
+            />
           </div>
 
           <div className="dashboard-categoies">
@@ -62,6 +68,17 @@ const Dashboard = () => {
             }
           </div>
         </section>
+
+
+        <section className="transaction-container">
+          <div className="gender-chart">
+            <h2>Gender Ratio</h2>
+            <BiMaleFemale />
+          </div>
+        </section>
+
+
+
       </main>
     </div>
   );

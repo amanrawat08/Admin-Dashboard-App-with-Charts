@@ -44,7 +44,7 @@ li {
 .adminContainer {
   @include mixin.grid(1fr 4fr, 2rem);
   height: 100vh;
-  background-color: rgb(236, 234, 234);
+  background-color: rgb(245, 245, 245);
   > aside {
     background: #f8f9fa;
     padding: 1rem;
